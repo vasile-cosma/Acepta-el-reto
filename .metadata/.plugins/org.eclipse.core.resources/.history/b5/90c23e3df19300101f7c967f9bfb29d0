@@ -42,6 +42,10 @@ public class Semana01 {
 		while (true) {
 			int definicionesAcum = 0;
 			int tiempoXDef= sc.nextInt();
+
+			if (tiempoXDef==0)
+				break;
+			
 			while (true) {
 				int definiciones = sc.nextInt();
 				if (definiciones==0)
@@ -49,20 +53,19 @@ public class Semana01 {
 				definicionesAcum += definiciones;
 			}
 			
-			int totalSegundos = definicionesAcum * tiempoXDef;
-			System.out.println(totalSegundos);
-			int segundos = totalSegundos % 60;
-			int minutos = (totalSegundos % 3600) / 60;
-			int horas = totalSegundos / 3600 ;
-			System.out.println("");
-			
-			
+			System.out.println(formatearHora(definicionesAcum, tiempoXDef));
 			
 		}
-			
 		
-		
-		
+	}
+
+	private static String formatearHora(int definicionesAcum, int tiempoXDef) {
+		int totalSegundos = definicionesAcum * tiempoXDef;
+		int segundos = totalSegundos % 60;
+		int minutos = (totalSegundos % 3600) / 60;
+		int horas = totalSegundos / 3600 ;
+		String horaFormateada = String.format("%d:%d:%d", horas, minutos, segundos);
+		return horaFormateada;
 	}
 
 }

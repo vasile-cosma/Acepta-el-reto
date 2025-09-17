@@ -1,7 +1,5 @@
 package ejercicios;
 
-import java.sql.Time;
-import java.time.*;
 import java.util.Scanner;
 
 /*
@@ -31,13 +29,11 @@ Salida de ejemplo
 00:00:06
 00:02:40
 02:16:40
-
-
  */
 public class Semana01 {
-
+	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		
 		
 		while (true) {
 			int definicionesAcum = 0;
@@ -53,19 +49,16 @@ public class Semana01 {
 				definicionesAcum += definiciones;
 			}
 			
-			System.out.println(formatearHora(definicionesAcum, tiempoXDef));
+			int totalSegundos = definicionesAcum * tiempoXDef;
+			int segundos = totalSegundos % 60;
+			int minutos = (totalSegundos % 3600) / 60;
+			int horas = totalSegundos / 3600 ;
+			String horaFormateada = String.format("%02d:%02d:%02d", horas, minutos, segundos);
+			
+			System.out.println(horaFormateada);
 			
 		}
 		
-	}
-
-	private static String formatearHora(int definicionesAcum, int tiempoXDef) {
-		int totalSegundos = definicionesAcum * tiempoXDef;
-		int segundos = totalSegundos % 60;
-		int minutos = (totalSegundos % 3600) / 60;
-		int horas = totalSegundos / 3600 ;
-		String horaFormateada = String.format("%d:%d:%d", horas, minutos, segundos);
-		return horaFormateada;
 	}
 
 }
