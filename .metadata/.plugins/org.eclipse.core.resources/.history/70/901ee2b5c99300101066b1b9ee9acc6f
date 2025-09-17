@@ -1,0 +1,68 @@
+package ejercicios;
+
+import java.sql.Time;
+import java.time.*;
+import java.util.Scanner;
+
+/*
+ *  Mafalda está habituada a ver a su padre sentado leyendo libros o el periódico durante ratos bastante largos. Antes de aprender a leer, no entiendía por qué, de vez en cuando, se levantaba, cogía otro libro (¡y bien gordote!), lo leía durante unos segundos sin ni siquiera sentarse, lo devolvía a su sitio y se iba. ¡Así no lo acabaría nunca!
+
+Ahora que ya sabe lo que es un diccionario, se pregunta cuánto tardaría su padre en acabárselo, sabiendo cuánto tarda en leer cada definición.
+Entrada
+
+Cada caso de prueba comienza con un número que indica cuántos segundos necesita el padre de Mafalda para leer la definición de una palabra del diccionario. A continuación, aparece una línea con la cantidad de definiciones que hay en cada una de las páginas. La lista termina con un 0.
+
+La entrada acaba con un 0, que no debe procesarse.
+Salida
+
+Por cada caso de prueba, se escribirá cuánto tardará el padre de Mafalda en leerse el diccionario completo, utilizando el formato HH:MM:SS (horas, minutos y segundos). El tiempo debe ser correcto (no más de 59 segundos ni más de 59 minutos) y usar dos dígitos para cada elemento. Se garantiza que el tiempo será menor a un día completo.
+Entrada de ejemplo
+
+1
+1 2 3 0
+4
+10 11 9 10 0
+100
+12 22 15 33 0
+0
+
+Salida de ejemplo
+
+00:00:06
+00:02:40
+02:16:40
+
+
+ */
+public class Semana01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		while (true) {
+			int definicionesAcum = 0;
+			int tiempoXDef= sc.nextInt();
+			while (true) {
+				int definiciones = sc.nextInt();
+				if (definiciones==0)
+					break;
+				definicionesAcum += definiciones;
+			}
+			
+			int totalSegundos = definicionesAcum * tiempoXDef;
+			System.out.println(totalSegundos);
+			int segundos = totalSegundos % 60;
+			int minutos = (totalSegundos % 3600) / 60;
+			int horas = totalSegundos / 3600 ;
+			System.out.println(horas + ":" + minutos + );
+			
+			
+			
+		}
+			
+		
+		
+		
+	}
+
+}

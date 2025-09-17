@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\Vespertino\Desktop\Acepta el reto\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2066773509.index
+2249398334.index
